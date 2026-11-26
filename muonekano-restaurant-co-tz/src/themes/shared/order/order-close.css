@@ -1,0 +1,17 @@
+/* © Bright Abuu. Haki zote zimehifadhiwa. */
+/* Kufunga dirisha: alama nyembamba (×) tu, bila mpaka wala duara; si neno "Funga". Jina lake kwa wasomaji wa skrini
+   liko kwenye aria-label, na alama yenyewe ina aria-hidden. Eneo la kubonyeza ni 44px ingawa halionekani.
+   Margin hasi inaweka alama karibu na ukingo wa maudhui, si ndani ya kisanduku cha 44px.
+   Inatumika kwenye dirisha la oda (.ord-btn.x, Standard na Zebra) na madirisha ya chakula na booking ya Standard (.dm-close). */
+.ord-btn.x,
+.dm-btn.dm-close {
+  display: inline-flex; align-items: center; justify-content: center; flex: none;
+  width: 44px; min-width: 44px; padding: 0; margin-right: -10px;
+  font-size: 32px; font-weight: 300; line-height: 1;
+  background: transparent; border-color: transparent;
+}
+.ord-btn.x { color: var(--o-mut); }
+.dm-btn.dm-close { width: var(--tap); min-width: var(--tap); color: var(--muted); }
+/* Juu ya kitufe: alama inakuwa nyeusi kuliko ilivyo (rangi ya maandishi ya dirisha). */
+.ord-btn.x:hover:not(:disabled) { filter: none; color: inherit; }
+.dm-btn.dm-close:hover { border-color: transparent; color: var(--fg); }

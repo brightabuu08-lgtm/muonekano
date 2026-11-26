@@ -1,0 +1,9 @@
+
+/* © Bright Abuu. Haki zote zimehifadhiwa. */
+/* Arifa za oda ndani ya risiti ya dirisha la oda. Rangi zinatoka --o-* za order.css, kwa hiyo zinafuata theme yoyote
+   (Standard na Zebra zinazipitia .ord). Mstari wa vitone juu ni sawa na mstari wa tiketi. */
+.ord-alert { margin: 12px 0 4px; padding-top: 12px; border-top: 1px dashed var(--o-line); }
+.ord-alert .ord-sub { margin: 0 0 8px; }
+.ord-alert .ord-btn { width: 100%; }
+/* Kiungo kidogo cha "Zima arifa": kinaanzia kushoto, chini ya maelezo. */
+.ord-alert .ord-link { justify-content: flex-start; }

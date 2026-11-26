@@ -1,0 +1,47 @@
+/* © Bright Abuu. Haki zote zimehifadhiwa. */
+/* Admin: "Ofa ya leo" (xo-) na "Rating na maoni" (xr-), kwa giza la admin (.adm-dk). Rangi na vipimo ni tokens za brand.css;
+   nyota ni za njano (--x-star, extras.css) kwa sababu ni alama inayojulikana. */
+.adm-dk .xo-list, .adm-dk .xr-list { display: grid; gap: calc(var(--space) * 3); margin: calc(var(--space) * 4) 0 0; padding: 0; list-style: none; }
+.adm-dk .xo-row { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: calc(var(--space) * 4); padding: calc(var(--space) * 4); }
+.adm-dk .xo-live { border-color: var(--done); }
+.adm-dk .xo-name { display: grid; gap: calc(var(--space) * 1); min-width: 0; }
+.adm-dk .xo-name span { font-size: var(--text-sm); color: var(--muted); }
+.adm-dk .xo-name .xo-tag { justify-self: start; padding: 2px calc(var(--space) * 2); font-size: var(--text-xs); font-weight: 700; color: var(--fg); background: var(--raised); border: 1px solid var(--border); border-radius: var(--radius-pill); }
+.adm-dk .xo-name .xo-tag-live { color: var(--bg); background: var(--done); border-color: var(--done); }
+.adm-dk .xo-form { display: flex; flex-wrap: wrap; align-items: flex-end; gap: calc(var(--space) * 2); }
+.adm-dk .xo-form label { display: grid; gap: calc(var(--space) * 1); font-size: var(--text-xs); color: var(--muted); }
+.adm-dk .xo-form input {
+  width: 140px; min-height: var(--tap); padding: 0 calc(var(--space) * 3); font: inherit; font-size: var(--text-base); color: var(--fg);
+  background: var(--bg); border: 1.5px solid var(--border-strong); border-radius: var(--radius-sm); color-scheme: dark;
+}
+.adm-dk .xo-form input[type="date"] { width: 160px; }
+.adm-dk .xo-form .adm-btn { min-height: var(--tap); }
+
+.adm-dk .xr-dishes { padding: calc(var(--space) * 5); }
+.adm-dk .xr-dishes h2 { margin: 0 0 calc(var(--space) * 3); font-size: var(--text-lg); }
+.adm-dk .xr-dishes ul { display: grid; gap: calc(var(--space) * 2); margin: 0; padding: 0; list-style: none; }
+.adm-dk .xr-dishes li { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: calc(var(--space) * 2); padding: calc(var(--space) * 2) 0; border-bottom: 1px solid var(--border); }
+.adm-dk .xr-avg { display: inline-flex; align-items: center; gap: calc(var(--space) * 2); }
+.adm-dk .xr-avg b { font-family: var(--font-mono); }
+.adm-dk .xr-avg small { color: var(--muted); }
+.adm-dk .xr-row { display: grid; gap: calc(var(--space) * 2); padding: calc(var(--space) * 4); }
+.adm-dk .xr-hidden { opacity: 0.6; border-style: dashed; }
+.adm-dk .xr-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: calc(var(--space) * 2); }
+.adm-dk .xr-c { margin: 0; overflow-wrap: anywhere; }
+.adm-dk .xr-row .adm-btn { justify-self: start; }
+.adm-dk .x-stars svg { width: 16px; height: 16px; }
+.adm-dk { --x-star-off: var(--border-strong); }
+
+/* Usalama (xs-): kuwasha au kuzima 2FA. */
+.adm-dk .xs-card { display: grid; gap: calc(var(--space) * 3); max-width: 640px; margin-top: calc(var(--space) * 4); padding: calc(var(--space) * 5); }
+.adm-dk .xs-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: calc(var(--space) * 3); }
+.adm-dk .xs-head .adm-sh { margin: 0; }
+.adm-dk .xs-enroll { display: grid; gap: calc(var(--space) * 3); }
+.adm-dk .xs-qr { padding: calc(var(--space) * 2); background: #fff; border-radius: var(--radius-sm); }
+.adm-dk .xs-code { display: grid; gap: calc(var(--space) * 1); max-width: 220px; }
+.adm-dk .xs-code input {
+  min-height: var(--tap); padding: 0 calc(var(--space) * 3); font-family: var(--font-mono); font-size: var(--text-lg); color: var(--fg);
+  background: var(--bg); border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
+}
+.adm-dk .xs-actions { display: flex; flex-wrap: wrap; align-items: center; gap: calc(var(--space) * 2); }
+.adm-dk .xs-actions .adm-help { flex-basis: 100%; margin: 0; }

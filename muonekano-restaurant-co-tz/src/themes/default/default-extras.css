@@ -1,0 +1,17 @@
+/* © Bright Abuu. Haki zote zimehifadhiwa. */
+/* Muonekano wa Standard: ofa ya leo na rating (vipande vya pamoja: shared/extras). Tokens za brand.css tu, bila #hex;
+   nyota zinabaki za njano za extras.css kwa sababu ni alama inayojulikana kwa kila muonekano. */
+.dm { --x-line: var(--border); --x-accent: var(--fg); --x-on: var(--bg); --x-offer: var(--danger); }
+.dm .dm-rate { margin-top: 4px; color: var(--muted); }
+.dm .item-head .x-off { flex: none; }
+.dm-offers { margin-bottom: 8px; }
+.dm-offer-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.dm .dm-offer {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; width: 100%; min-height: var(--tap);
+  padding: 10px 14px; font: inherit; text-align: left; color: var(--fg); background: var(--surface); cursor: pointer;
+  border: 1px solid var(--border-strong); border-left: 4px solid var(--danger); border-radius: var(--radius-sm);
+}
+.dm .dm-offer:hover { border-color: var(--fg); border-left-color: var(--danger); }
+.dm .dm-offer b { font-weight: 700; }
+.dm-offer-p { font-family: var(--font-mono); font-weight: 700; }
+.dm .dm-price .x-was { font-size: var(--text-sm); }

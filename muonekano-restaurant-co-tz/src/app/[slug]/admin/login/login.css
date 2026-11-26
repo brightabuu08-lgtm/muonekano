@@ -1,0 +1,85 @@
+/* © Bright Abuu. Haki zote zimehifadhiwa. */
+/* Ingia ya admin: brand "Tiketi + Ubao" kwa giza (.dk), kwa kila mgahawa. Rangi zote ni tokens za src/styles/brand.css.
+   Isipokuwa moja: picha ya QR ya kusajili 2FA inahitaji mandhari nyeupe ili isomeke (.gate-qr).
+   Madarasa ya fomu (.gate-*) yanatoka globals.css; hapa yanabadilishwa ndani ya .adl tu, kwa hiyo Gate ya mgahawa (Zebra, default) haiguswi. */
+
+.adl {
+  min-height: 100dvh;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  color: var(--fg);
+  background: var(--bg);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.4;
+}
+.adl :is(h1, h2) { font-family: var(--font-display); font-weight: 700; letter-spacing: var(--tracking-display); border: 0; padding: 0; }
+
+/* ---- upande wa kushoto: nembo, tiketi ya "Mpya", kichwa ---- */
+.adl-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: calc(var(--space) * 10);
+  padding: calc(var(--space) * 10) calc(var(--space) * 12);
+  overflow: hidden;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+}
+.adl-ticket {
+  align-self: flex-start;
+  width: 220px;
+  padding: calc(var(--space) * 4);
+  color: var(--signal-on);
+  background: var(--signal);
+  border-radius: var(--radius-md);
+  transform: rotate(-4deg);
+}
+.adl-ticket b { display: block; font-family: var(--font-mono); font-size: var(--text-sm); letter-spacing: 0.08em; text-transform: uppercase; }
+.adl-ticket i { display: block; height: 8px; margin-top: calc(var(--space) * 3); background: var(--signal-on); border-radius: var(--radius-pill); opacity: 0.85; }
+.adl-ticket i + i { width: 60%; opacity: 0.55; }
+.adl-ticket::after { content: ""; display: block; margin-top: calc(var(--space) * 4); border-top: 2px dashed var(--signal-on); opacity: 0.5; }
+.adl-headline { margin: 0; max-width: 11ch; font-family: var(--font-display); font-weight: 700; font-size: var(--text-3xl); line-height: var(--leading-tight); letter-spacing: var(--tracking-display); }
+
+/* ---- upande wa kulia: fomu ---- */
+.adl-panel { position: relative; display: flex; flex-direction: column; justify-content: center; width: 100%; max-width: 480px; margin: 0 auto; padding: calc(var(--space) * 12) calc(var(--space) * 8); }
+.adl-lang { position: absolute; top: calc(var(--space) * 3); right: calc(var(--space) * 3); color: var(--fg); }
+.adl-for { margin: 0; font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); overflow-wrap: anywhere; }
+.adl-panel h1 { margin: calc(var(--space) * 1) 0 calc(var(--space) * 5); font-size: var(--text-2xl); line-height: 1.05; }
+.adl-note { display: flex; gap: calc(var(--space) * 3); align-items: flex-start; margin: calc(var(--space) * 6) 0 0; padding: calc(var(--space) * 3) calc(var(--space) * 4); color: var(--muted); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); }
+.adl-note p { margin: 0; font-size: var(--text-sm); }
+.adl-note a { color: var(--fg); font-weight: 700; text-underline-offset: 3px; }
+
+.adl .gate-card { gap: calc(var(--space) * 2); padding: 0; background: transparent; border: 0; border-radius: 0; }
+.adl .gate-label { margin-top: calc(var(--space) * 3); font-size: var(--text-xs); font-weight: 700; letter-spacing: 0.08em; color: var(--muted); }
+.adl .gate-input { min-height: 52px; color: var(--fg); background: var(--bg); border: 1.5px solid var(--border-strong); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: var(--text-base); }
+.adl .gate-pin { font-family: var(--font-mono); font-size: var(--text-lg); }
+.adl .gate-btn { width: 100%; min-height: 52px; margin-top: calc(var(--space) * 4); color: var(--accent-on); background: var(--accent); border-radius: var(--radius-sm); font-size: var(--text-base); font-weight: 700; }
+.adl .gate-btn:hover:not(:disabled) { filter: brightness(0.92); }
+.adl .gate-link { min-height: var(--tap); color: var(--muted); }
+.adl .gate-err { color: var(--danger); font-size: var(--text-sm); }
+.adl .gate-help { color: var(--muted); font-size: var(--text-sm); }
+.adl .gate-secret { color: var(--fg); background: var(--raised); border-radius: var(--radius-sm); font-family: var(--font-mono); }
+.adl .gate-qr { padding: calc(var(--space) * 2); background: #fff; border: 0; border-radius: var(--radius-sm); }
+.adl :is(.gate-input, .gate-btn, .gate-link, .adl-lang button):focus-visible { outline: 3px solid var(--fg); outline-offset: 2px; }
+
+@media (max-width: 860px) {
+  .adl { grid-template-columns: minmax(0, 1fr); }
+  .adl-hero { gap: calc(var(--space) * 6); padding: calc(var(--space) * 6) calc(var(--space) * 5); border-right: 0; border-bottom: 1px solid var(--border); }
+  .adl-headline { max-width: none; font-size: var(--text-2xl); }
+  .adl-ticket { width: 160px; padding: calc(var(--space) * 3); }
+  .adl-panel { padding: calc(var(--space) * 8) calc(var(--space) * 5) calc(var(--space) * 12); }
+}
+
+/* Kuingia kwa Google (admin wa mgahawa): kitufe cheupe kwa mwongozo wa Google, kisha mstari "au". */
+.adl .gate-oauth { display: flex; flex-direction: column; gap: calc(var(--space) * 3); margin-bottom: calc(var(--space) * 2); }
+.adl .gate-google { display: inline-flex; align-items: center; justify-content: center; gap: calc(var(--space) * 3); width: 100%; min-height: 52px; color: #1f1f1f; background: #fff; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); font-family: var(--font-body); font-size: var(--text-base); font-weight: 600; cursor: pointer; }
+.adl .gate-google:hover:not(:disabled) { filter: brightness(0.95); }
+.adl .gate-google:disabled { opacity: 0.6; cursor: default; }
+.adl .gate-google:focus-visible { outline: 3px solid var(--fg); outline-offset: 2px; }
+.adl .gate-or { display: flex; align-items: center; gap: calc(var(--space) * 3); margin: 0; color: var(--muted); font-size: var(--text-xs); text-transform: uppercase; letter-spacing: 0.08em; }
+.adl .gate-or::before, .adl .gate-or::after { content: ""; flex: 1; border-top: 1px solid var(--border); }

@@ -1,0 +1,93 @@
+/* © Bright Abuu. Haki zote zimehifadhiwa. */
+/* Kikapu na checkout: vinafanana kwa muonekano wowote. Rangi zinatoka kwa theme:
+   --g-accent / --g-on (muonekano wa pamoja) au --ink / --paper (Zebra). */
+.ord {
+  --o-a: var(--g-accent, var(--ink, #121110));
+  --o-on: var(--g-on, var(--paper, #ffffff));
+  --o-line: #d6d6d6;
+  --o-mut: #5f5f5f;
+  --o-err: #b8261f;
+}
+
+.ord-right { display: inline-flex; align-items: center; gap: 12px; }
+/* Simu nyembamba: maelezo ya kifurushi juu, bei na kitufe chini yake, ili maandishi yasibanwe. */
+@media (max-width: 480px) {
+  .packs li { flex-wrap: wrap; }
+  .packs li > .ord-right { width: 100%; justify-content: space-between; }
+}
+
+/* ---- vitufe ---- */
+.ord-btn {
+  min-height: 44px; padding: 0 18px; border-radius: 10px; border: 2px solid var(--o-a);
+  background: var(--o-a); color: var(--o-on); font: inherit; font-weight: 600; cursor: pointer;
+}
+.ord-btn:hover:not(:disabled) { filter: brightness(1.12); }
+.ord-btn:focus-visible, .ord-link:focus-visible, .ord-field input:focus-visible, .ord-field textarea:focus-visible,
+.ord-opt select:focus-visible, .ord-type input:focus-visible { outline: 3px solid var(--o-a); outline-offset: 2px; }
+.ord-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.ord-btn.small { min-height: 44px; padding: 0 14px; }
+.ord-btn.ghost { background: transparent; color: var(--o-a); }
+.ord-btn.light { background: var(--o-on); color: var(--o-a); border-color: var(--o-on); }
+.ord-btn.wide { width: 100%; margin-top: 16px; }
+.ord-btn.step { min-width: 44px; min-height: 44px; padding: 0; font-size: 20px; line-height: 1; }
+.ord-link { display: inline-flex; align-items: center; justify-content: flex-end; min-width: 44px; min-height: 44px; background: none; border: 0; padding: 0; font: inherit; font-size: 14px; color: var(--o-mut); text-decoration: underline; cursor: pointer; }
+
+.ord-step { display: inline-flex; align-items: center; gap: 8px; }
+.ord-step output { min-width: 24px; text-align: center; font-weight: 700; }
+
+/* ---- chaguo la mtindo ---- */
+.ord-opt { display: grid; gap: 4px; margin: 6px 0 2px; max-width: 320px; }
+.ord-opt label { font-size: 14px; color: var(--o-mut); }
+.ord-opt select { min-height: 44px; padding: 0 10px; font: inherit; border: 1px solid var(--o-line); border-radius: 10px; background: #fff; }
+
+/* ---- mstari wa chini wa kikapu ---- */
+.ord-spacer { height: 88px; }
+.ord-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: var(--o-a); color: var(--o-on);
+}
+.ord-bar p { margin: 0; }
+
+/* ---- dirisha ---- */
+.ord-dialog {
+  width: min(560px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); padding: 0; border: 0; border-radius: 16px;
+  background: #fff; color: #121110; overflow: auto;
+}
+.ord-dialog::backdrop { background: rgba(0, 0, 0, 0.55); }
+.ord-sheet { padding: 16px 16px 24px; }
+.ord-sheet-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.ord-sheet-head h2 { font-size: 22px; border: 0; padding: 0; }
+.ord-empty { padding: 12px 0; display: grid; gap: 12px; }
+
+.ord-receipt { margin: 8px 0 16px; padding: 12px 14px; border: 2px solid var(--o-a); border-radius: 12px; }
+.ord-receipt p { margin: 4px 0; }
+.ord-receipt-title { font-size: 18px; }
+.ord-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+
+.ord-lines { list-style: none; margin: 0; padding: 0; }
+.ord-lines li { display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--o-line); }
+.ord-lines li > div:first-child { display: grid; gap: 2px; min-width: 0; }
+.ord-line-right { display: grid; justify-items: end; gap: 4px; }
+.ord-sub { display: block; font-size: 14px; color: var(--o-mut); }
+/* Bei ya "kila moja" kwenye mstari wa kikapu: mono kwenye Standard (.dm; var(--font-mono) ipo kwenye .lt). Zebra haina
+   var(--font-mono), kwa hiyo haibadiliki. Maelezo mengine ya .ord-sub yanabaki ya kawaida. */
+.dm .ord-each { font-family: var(--font-mono); font-weight: 500; }
+.ord-total { margin: 14px 0 2px; font-size: 18px; }
+
+.ord-type { border: 1px solid var(--o-line); border-radius: 12px; margin: 16px 0 8px; padding: 8px 12px 10px; }
+.ord-type legend { padding: 0 6px; font-weight: 600; }
+.ord-type label { display: flex; align-items: center; gap: 10px; min-height: 44px; }
+.ord-type input { width: 20px; height: 20px; accent-color: var(--o-a); }
+
+.ord-field { display: grid; gap: 4px; margin-top: 12px; }
+.ord-field label { font-weight: 600; }
+.ord-field input, .ord-field textarea {
+  width: 100%; min-height: 44px; padding: 10px 12px; font: inherit; border: 1px solid #8a8a8a; border-radius: 10px; background: #fff; color: inherit;
+}
+.ord-field [aria-invalid="true"] { border-color: var(--o-err); border-width: 2px; }
+.ord-err { margin: 6px 0 0; color: var(--o-err); font-size: 14px; font-weight: 600; }
+.ord-captcha { margin-top: 14px; min-height: 65px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .ord-btn { transition: filter 0.12s; }
+}

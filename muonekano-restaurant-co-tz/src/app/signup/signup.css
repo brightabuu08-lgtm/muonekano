@@ -1,0 +1,23 @@
+/* © Bright Abuu. Haki zote zimehifadhiwa.
+   Fomu ya kujiunga (/signup) juu ya ganda la ingia ya admin (.adl, login.css). Thamani kutoka tokens za brand. */
+.adl .jn-themes { display: flex; flex-direction: column; gap: calc(var(--space) * 2); margin: 0; padding: 0; border: 0; }
+.adl .jn-theme { display: flex; align-items: center; gap: calc(var(--space) * 3); padding: calc(var(--space) * 3); background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius-md); cursor: pointer; }
+.adl .jn-theme:has(input:checked) { border-color: var(--accent); }
+.adl .jn-theme input { accent-color: var(--accent); }
+.adl .jn-theme:has(input:focus-visible) { outline: 3px solid var(--fg); outline-offset: 2px; }
+.adl .jn-swatch { display: flex; flex: none; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius-sm); }
+.adl .jn-swatch i { display: block; width: 14px; height: 36px; }
+.adl .jn-theme-txt { display: flex; flex-direction: column; gap: calc(var(--space) * 1); min-width: 0; }
+.adl .jn-theme-txt small { color: var(--muted); font-size: var(--text-sm); }
+.adl .jn-slug { display: flex; align-items: center; gap: calc(var(--space) * 2); }
+.adl .jn-slug span { flex: none; color: var(--muted); font-family: var(--font-mono); font-size: var(--text-sm); }
+.adl .jn-slug .gate-input { flex: 1; min-width: 0; font-family: var(--font-mono); }
+.adl .jn-file { padding: calc(var(--space) * 3); }
+.adl .jn-captcha { margin-top: calc(var(--space) * 3); }
+.adl .jn-done { display: flex; flex-direction: column; gap: calc(var(--space) * 3); }
+.adl .jn-done h2 { margin: 0; font-size: var(--text-xl); }
+.adl .jn-done p { margin: 0; }
+.adl .jn-btnlink { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
+.adl .jn-as { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: calc(var(--space) * 2); margin-bottom: calc(var(--space) * 2); padding: calc(var(--space) * 3) calc(var(--space) * 4); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); font-size: var(--text-sm); }
+.adl .jn-as b { overflow-wrap: anywhere; }
+.adl .jn-legal a { color: var(--fg); font-weight: 700; text-underline-offset: 3px; }

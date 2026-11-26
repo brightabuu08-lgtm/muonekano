@@ -1,0 +1,41 @@
+
+/* © Bright Abuu. Haki zote zimehifadhiwa. */
+/* Hali ya oda kwa mteja, mtindo wa Zebra: dirisha la pembe za ndovu, kichwa cha Gloock, mstari wenye almasi (kama .zm-rule),
+   hatua zenye almasi badala ya duara, nyekundu ya Zebra kwa hatua ya sasa tu. Inaonekana chini ya .zm pekee; Standard (.dm)
+   ina mtindo wake kwenye order-timeline.css. Rangi ni --zm-* za zebra.css (dirisha ni pembe za ndovu, kwa hiyo --zm-char na
+   --zm-char2, si --zm-ink ya giza). Majina ya .ord-* ni ya kikapu cha pamoja; hapa yanabadilishwa ndani ya .zm tu. */
+.zm .ord-tl-wrap { display: block; margin: 6px 0 14px; text-align: center; }
+
+.zm .ord-hero {
+  margin: 6px 0 4px; font-family: "Gloock", "Bodoni 72", Didot, Georgia, serif; font-weight: 400;
+  font-size: clamp(28px, 8vw, 36px); line-height: 1.05; letter-spacing: -0.005em; color: var(--zm-char);
+}
+.zm .ord-hero.is-cancel { color: var(--zm-red); }
+.zm .ord-hero-sub { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--zm-char2); }
+
+/* Mstari wenye almasi chini ya kichwa, sawa na .zm-rule ya zebra.css (jina lake ni la Zebra, kwa hiyo hapa ni nakala yenye jina la kikapu). */
+.zm .ord-orn { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 14px; color: var(--zm-red); }
+.zm .ord-orn::before, .zm .ord-orn::after { content: ""; width: 52px; height: 1px; background: currentColor; opacity: 0.75; }
+.zm .ord-orn i { width: 6px; height: 6px; background: currentColor; transform: rotate(45deg); }
+
+.zm .ord-tl { list-style: none; margin: 18px auto 0; padding: 0; max-width: 300px; text-align: left; }
+.zm .ord-tl li { position: relative; display: flex; align-items: center; gap: 16px; min-height: 44px; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--zm-char2); }
+/* Mstari mwembamba kati ya almasi mbili: kutoka chini ya almasi hii hadi juu ya inayofuata. */
+.zm .ord-tl li:not(:last-child)::after { content: ""; position: absolute; left: 9.5px; top: calc(50% + 12px); bottom: calc(-50% + 12px); width: 1px; background: var(--zm-char2); opacity: 0.45; }
+.zm .ord-tl li.ord-tl-done:not(:last-child)::after { background: var(--zm-char); opacity: 1; }
+
+/* Almasi: mraba uliozungushwa 45°; alama ya tiki ndani inazungushwa kinyume ili isimame wima. */
+.zm .ord-tl-dot {
+  flex: none; display: grid; place-items: center; width: 15px; height: 15px; margin: 0 2px; transform: rotate(45deg);
+  border: 1.5px solid var(--zm-char2); background: transparent; color: var(--zm-ivory);
+}
+.zm .ord-tl-dot svg { width: 10px; height: 10px; transform: rotate(-45deg); fill: none; stroke: currentColor; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+.zm .ord-tl li.ord-tl-done { color: var(--zm-char); }
+.zm .ord-tl li.ord-tl-done .ord-tl-dot { background: var(--zm-char); border-color: var(--zm-char); }
+.zm .ord-tl li.ord-tl-now { color: var(--zm-red); font-weight: 800; }
+.zm .ord-tl li.ord-tl-now .ord-tl-dot { background: var(--zm-red); border-color: var(--zm-red); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .zm .ord-tl li.ord-tl-now .ord-tl-dot { animation: zm-tl-beat 1.8s ease-in-out infinite; }
+}
+@keyframes zm-tl-beat { 50% { box-shadow: 0 0 0 5px rgba(184, 38, 31, 0.18); } }

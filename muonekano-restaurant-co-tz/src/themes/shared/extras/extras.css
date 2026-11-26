@@ -1,0 +1,54 @@
+/* © Bright Abuu. Haki zote zimehifadhiwa. */
+/* Rating, maoni na ofa: vipande vya pamoja vya muonekano wote. Rangi zinatoka kwa vigezo hivi; kila muonekano unaweza
+   kuvibadilisha chini ya darasa lake (.dm, .zm, .nm). Nyota ni za njano kwa kila muonekano (alama inayojulikana). */
+:root {
+  --x-star: #f59e0b;
+  --x-star-off: #d4d4d8;
+  --x-line: rgba(127, 127, 127, 0.25);
+  --x-accent: var(--g-accent, #1f2937);
+  --x-on: var(--g-on, #ffffff);
+  --x-offer: #dc2626;
+}
+
+.x-stars { display: inline-flex; gap: 2px; vertical-align: middle; }
+.x-stars svg { width: 14px; height: 14px; fill: var(--x-star-off); }
+.x-stars svg.on { fill: var(--x-star); }
+
+.x-badge { display: inline-flex; align-items: center; gap: 3px; font-size: 12px; line-height: 1; white-space: nowrap; }
+.x-badge svg { width: 13px; height: 13px; fill: var(--x-star); }
+.x-badge b { font-weight: 700; }
+.x-badge small { font-size: 11px; opacity: 0.7; }
+
+.x-none { margin: 0; font-size: 13px; opacity: 0.7; }
+.x-reviews { display: grid; gap: 10px; }
+.x-sum { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 13px; }
+.x-sum > b { font-size: 22px; font-weight: 800; line-height: 1; }
+.x-sum > span { opacity: 0.7; }
+.x-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; max-height: 240px; overflow-y: auto; }
+.x-list li { padding: 10px 12px; border: 1px solid var(--x-line); border-radius: 12px; }
+.x-list p { margin: 4px 0 0; font-size: 13px; line-height: 1.45; overflow-wrap: anywhere; }
+.x-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 11px; opacity: 0.85; }
+
+.x-rate { display: grid; gap: 10px; margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--x-line); }
+.x-rate h3 { margin: 0; font-size: 15px; font-weight: 700; }
+.x-rate-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.x-rate-list li { display: grid; gap: 6px; }
+.x-rate-name { font-size: 14px; font-weight: 600; }
+.x-rate-done { display: grid; gap: 2px; }
+.x-rate-done small { font-size: 12px; opacity: 0.8; }
+.x-pick { display: inline-flex; gap: 2px; }
+.x-pick button { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; background: none; border: 0; border-radius: 10px; cursor: pointer; }
+.x-pick button svg { width: 28px; height: 28px; fill: var(--x-star-off); transition: fill 0.12s; }
+.x-pick button.on svg { fill: var(--x-star); }
+.x-pick button:focus-visible { outline: 3px solid var(--x-accent); outline-offset: 1px; }
+.x-rate-c { width: 100%; box-sizing: border-box; padding: 8px 12px; font: inherit; font-size: 14px; color: inherit; background: transparent; border: 1px solid var(--x-line); border-radius: 12px; resize: vertical; }
+.x-rate-send { justify-self: start; min-height: 44px; padding: 0 20px; font: inherit; font-weight: 700; color: var(--x-on); background: var(--x-accent); border: 0; border-radius: 999px; cursor: pointer; }
+.x-rate-send:disabled { opacity: 0.5; cursor: not-allowed; }
+.x-ok, .x-err { margin: 0; font-size: 13px; font-weight: 600; }
+.x-err { color: #b91c1c; }
+
+/* Ofa ya leo: bei ya zamani imekatwa na alama ya punguzo */
+.x-was { margin-left: 6px; font-weight: 400; text-decoration: line-through; opacity: 0.6; }
+.x-off { display: inline-block; padding: 1px 7px; font-size: 11px; font-weight: 800; line-height: 1.5; color: #fff; background: var(--x-offer); border-radius: 999px; }
+
+@media (prefers-reduced-motion: reduce) { .x-pick button svg { transition: none; } }

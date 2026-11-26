@@ -1,0 +1,80 @@
+/* (c) Bright Abuu. Haki zote zimehifadhiwa.
+   Brand ya jukwaa "Tiketi + Ubao": faili PEKEE la tokens. Chanzo: claude/BRAND-STANDARD.md na canvas (artboard 00).
+   - .lt = mwanga: tovuti ya masoko na upande wa mteja wa Standard (src/themes/default).
+   - .dk = giza: wahudumu, Ingia, admin (kila mgahawa).
+   - Zebra (src/themes/zebra) HAITUMII faili hili. Usiongeze tokens za Zebra hapa.
+   Kanuni: usinakili rangi kwa mkono kwenye CSS nyingine; tumia var(--...). Kitendo kimoja tu kwa skrini kinatumia --accent.
+   Namba za oda, saa na bei: font-family: var(--font-mono). Vitufe na sehemu za kubonyeza: angalau var(--tap). */
+
+.lt {
+  color-scheme: light;
+  --bg: #F2F1EC;
+  --surface: #FBFAF7;
+  --fg: #151515;            /* 16.1:1 kwenye bg */
+  --muted: #5C5A55;         /* 6.1:1 kwenye bg */
+  --border: #D9D6CE;        /* mistari tu, si mipaka ya input */
+  --border-strong: #8C887F; /* mipaka ya input na vitufe vya pili, 3.1:1 */
+  --accent: #C2391B;        /* nyanya: kitendo kimoja kwa skrini; nyeupe juu yake 5.4:1 */
+  --accent-on: #FFFFFF;
+  --accent-hover: #A42E14;
+  --signal: #C2391B;
+  --signal-on: #FFFFFF;
+  --done: #1E6B45;          /* hali za oda kwenye mwanga: weka neno pembeni, si rangi peke yake */
+  --warn: #8A5600;
+  --danger: #B3261E;
+}
+
+.dk {
+  color-scheme: dark;
+  --bg: #0F1211;
+  --surface: #181C1A;
+  --raised: #212623;        /* tiketi ndani ya safu, menyu iliyochaguliwa */
+  --fg: #ECEFEA;
+  --muted: #9BA39C;         /* 6.7:1 kwenye surface */
+  --border: #2A302D;
+  --border-strong: #6B756F; /* mipaka ya input, 3.6:1 */
+  --accent: #C9F26B;        /* kijani-limau: "Mpya", "hai" na kitendo kikuu tu */
+  --accent-on: #0F1211;     /* 14.7:1 */
+  --signal: #C9F26B;
+  --signal-on: #0F1211;
+  --done: #7FD1A8;          /* hali za oda: weka neno pembeni, si rangi peke yake */
+  --warn: #F2B84B;
+  --danger: #FF8A70;
+}
+
+/* Sehemu zinazofanana kwa mwanga na giza. */
+.lt,
+.dk {
+  --font-display: "Funnel Display", "Arial Narrow", sans-serif; /* 700, tracking -0.04em */
+  --font-body: "Funnel Sans", system-ui, sans-serif;            /* 400/500/600/700 */
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;       /* 500/700: namba za oda, saa, bei */
+
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+  --text-3xl: 48px;
+  --text-4xl: 80px;
+  --leading-body: 1.55;
+  --leading-tight: 0.95;
+  --tracking-display: -0.04em;
+
+  --space: 4px; /* msingi: tumia calc(var(--space) * n) */
+  --tap: 44px;  /* kipimo cha chini cha kitufe */
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+  --elev-raised: 0 1px 2px rgba(0, 0, 0, 0.06), 0 24px 40px -24px rgba(0, 0, 0, 0.35);
+
+  --container-max: 1240px;
+  --container-gutter-phone: 20px;
+  --container-gutter-tablet: 32px;
+  --container-gutter-desktop: 64px;
+  --section-y-phone: 56px;
+  --section-y-tablet: 80px;
+  --section-y-desktop: 120px;
+}

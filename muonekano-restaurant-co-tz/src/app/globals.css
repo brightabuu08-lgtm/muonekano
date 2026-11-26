@@ -1,0 +1,423 @@
+/* Ã‚Â© Bright Abuu. Haki zote zimehifadhiwa. */
+:root {
+  --ink: #121110;
+  --paper: #ffffff;
+  --gray: #5f5f5f;
+  --line: #d6d6d6;
+  --soft: #f3f3f3;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+/* Madirisha (dialog): ukurasa wa nyuma hausogei; dirisha husogea lenyewe, bila mstari wa scroll. */
+html:has(dialog[open]) { overflow: hidden; scrollbar-gutter: stable; }
+dialog { overscroll-behavior: contain; scrollbar-width: none; }
+dialog::-webkit-scrollbar { display: none; }
+body {
+  margin: 0;
+  font-family: "Archivo", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--paper);
+}
+.stripes {
+  height: 10px;
+  background: repeating-linear-gradient(110deg, var(--ink) 0 10px, var(--paper) 10px 20px);
+}
+.top { display: flex; align-items: center; gap: 14px; padding: 18px 16px 8px; max-width: 760px; margin: 0 auto; }
+.logo {
+  display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%;
+  background: var(--ink); color: var(--paper); font-family: "Gloock", serif; font-size: 26px;
+}
+h1, h2, h3 { font-family: "Gloock", serif; font-weight: 400; margin: 0; }
+h1 { font-size: 26px; line-height: 1.1; }
+.sub { margin: 2px 0 0; color: var(--gray); }
+main { max-width: 760px; margin: 0 auto; padding: 0 16px 32px; }
+section { margin-top: 28px; }
+h2 { font-size: 22px; padding-bottom: 6px; border-bottom: 2px solid var(--ink); }
+.item { padding: 14px 0; border-bottom: 1px solid var(--line); }
+.photos { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; max-width: 420px; margin-bottom: 10px; }
+.photos img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; background: var(--soft); border: 1px solid var(--line); }
+.photos img:first-child:nth-last-child(odd) { grid-column: 1 / -1; }
+.item-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+h3 { font-size: 18px; }
+.tag { margin: 2px 0 8px; color: var(--gray); font-size: 14px; }
+.packs { list-style: none; margin: 8px 0 0; padding: 0; }
+.packs li { display: flex; justify-content: space-between; gap: 16px; padding: 5px 0; }
+.packs small { color: var(--gray); }
+.packs strong { white-space: nowrap; }
+.badge { background: var(--ink); color: var(--paper); font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+.gone h3, .gone .packs { opacity: 0.55; }
+.notice { margin: 24px 0; padding: 12px 14px; background: var(--soft); border-left: 4px solid #b8261f; }
+footer { max-width: 760px; margin: 0 auto; padding: 20px 16px 40px; color: var(--gray); font-size: 13px; border-top: 1px solid var(--line); }
+
+/* ---------------------------------------------------------------------
+   Kurasa za kuingia: muonekano wa demo (Zebra-Restaurant-Kamili/Demo)
+   --------------------------------------------------------------------- */
+.gate-page {
+  --g-ink: #141210; --g-mut: #6b655c; --g-line: #e7e2d9; --g-bg: #f3f1ec; --g-red: #b8261f;
+  min-height: 100dvh; background: var(--g-bg); color: var(--g-ink);
+}
+.gate-hero { background: var(--g-ink); color: var(--g-bg); text-align: center; padding: 30px 20px 30px; }
+.gate-logo { display: block; margin: 0 auto 14px; width: 68px; height: 68px; border-radius: 50%; }
+.gate-eyebrow { margin: 0 0 6px; font-size: 13px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #cfc9bd; }
+.gate-hero h1 { font-size: clamp(28px, 8vw, 36px); line-height: 1.1; color: var(--g-bg); }
+.gate-body { max-width: 440px; margin: 0 auto; padding: 24px 20px 48px; }
+.gate-card { background: #fff; border: 1px solid var(--g-line); border-radius: 20px; padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+.gate-label { margin: 8px 0 0; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--g-mut); }
+.gate-input {
+  width: 100%; min-height: 52px; padding: 12px 16px; font: inherit; font-size: 17px; color: var(--g-ink);
+  background: #fff; border: 1px solid var(--g-line); border-radius: 14px;
+}
+.gate-input:focus-visible, .gate-btn:focus-visible, .gate-link:focus-visible { outline: 3px solid var(--g-ink); outline-offset: 2px; }
+.gate-pin { letter-spacing: 0.4em; text-align: center; font-size: 22px; }
+.gate-btn {
+  min-height: 52px; margin-top: 12px; padding: 0 20px; font: inherit; font-size: 17px; font-weight: 600;
+  color: #fff; background: var(--g-ink); border: 0; border-radius: 14px; cursor: pointer;
+}
+.gate-btn:disabled { opacity: 0.6; cursor: progress; }
+.gate-link { min-height: 44px; padding: 0 8px; font: inherit; color: var(--g-mut); background: none; border: 0; text-decoration: underline; cursor: pointer; }
+.gate-err { margin: 6px 0 0; color: var(--g-red); font-size: 15px; }
+.gate-help { margin: 4px 0; color: var(--g-mut); font-size: 15px; }
+.gate-secret { display: block; margin-top: 6px; padding: 8px 10px; background: var(--g-bg); border-radius: 10px; word-break: break-all; color: var(--g-ink); }
+.gate-qr { align-self: center; width: 180px; height: 180px; border: 1px solid var(--g-line); border-radius: 12px; }
+.gate-welcome { font-size: 24px; margin: 2px 0 4px; }
+.gate-note { display: flex; gap: 12px; align-items: flex-start; margin-top: 16px; padding: 14px 16px; background: #fff; border: 1px solid var(--g-line); border-radius: 18px; color: var(--g-mut); }
+.gate-note p { margin: 0; font-size: 15px; }
+.gate-note svg { flex: none; margin-top: 2px; }
+
+/* ---------------------------------------------------------------------
+   Admin: muonekano wa demo (admin.html). Admin ni mmoja kwa migahawa yote, hautegemei theme ya wateja.
+   --------------------------------------------------------------------- */
+.adm-page { --a-ink: #141210; --a-mut: #6b655c; --a-line: #e7e2d9; --a-bg: #f3f1ec; --a-red: #b8261f; --a-green: #1f7a45;
+  min-height: 100dvh; background: var(--a-bg); color: var(--a-ink); }
+.adm-loading, .adm-empty { margin: 24px 16px; color: #6b655c; }
+.adm-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; background: var(--a-ink); color: var(--a-bg); }
+.adm-eyebrow { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: #cfc9bd; }
+.adm-who { margin: 2px 0 0; font-size: 15px; }
+.adm-main { max-width: 860px; margin: 0 auto; padding: 20px 16px 48px; }
+.adm-head h1 { font-size: 28px; }
+.adm-head p { margin: 4px 0 16px; color: var(--a-mut); }
+.adm-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.adm-chip { min-height: 44px; padding: 0 16px; font: inherit; font-size: 15px; color: var(--a-ink); background: #fff; border: 1px solid var(--a-line); border-radius: 999px; cursor: pointer; }
+.adm-chip[aria-pressed="true"] { color: #fff; background: var(--a-ink); border-color: var(--a-ink); }
+.adm-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.adm-card { background: #fff; border: 1px solid var(--a-line); border-radius: 18px; padding: 14px; }
+.adm-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; }
+.adm-thumb { display: grid; place-items: center; flex: none; width: 56px; height: 56px; overflow: hidden; border-radius: 12px; background: var(--a-bg); font-family: "Gloock", serif; font-size: 24px; }
+.adm-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.adm-info { flex: 1 1 160px; min-width: 0; }
+.adm-info h2 { font-size: 18px; padding: 0; border: 0; }
+.adm-info p { margin: 2px 0 0; color: var(--a-mut); font-size: 14px; }
+.adm-btn { min-height: 44px; padding: 0 16px; font: inherit; font-size: 15px; font-weight: 600; color: #fff; background: var(--a-ink); border: 1px solid var(--a-ink); border-radius: 12px; cursor: pointer; }
+.adm-btn-ghost { color: var(--a-ink); background: #fff; border-color: var(--a-line); }
+.adm-danger { background: var(--a-red); border-color: var(--a-red); }
+.adm-btn:disabled, .adm-toggle:disabled { opacity: 0.55; cursor: progress; }
+.adm-toggle { min-height: 44px; padding: 0 14px; font: inherit; font-size: 14px; font-weight: 600; border-radius: 999px; border: 1px solid; cursor: pointer; background: #fff; }
+.adm-on { color: var(--a-green); border-color: var(--a-green); }
+.adm-off { color: var(--a-red); border-color: var(--a-red); }
+.adm-btn:focus-visible, .adm-chip:focus-visible, .adm-toggle:focus-visible, .adm-price input:focus-visible { outline: 3px solid var(--a-ink); outline-offset: 2px; }
+.adm-note { min-height: 22px; margin: 8px 0 0; font-size: 14px; color: var(--a-green); }
+.adm-note.adm-err, .adm-err { color: var(--a-red); }
+.adm-err { margin: 16px; }
+.adm-edit { display: grid; gap: 20px; margin-top: 8px; padding-top: 14px; border-top: 1px solid var(--a-line); }
+.adm-edit h3 { font-size: 17px; margin-bottom: 8px; }
+.adm-price { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; font-size: 14px; color: var(--a-mut); }
+.adm-price input { min-height: 48px; padding: 8px 14px; font: inherit; font-size: 17px; color: var(--a-ink); background: #fff; border: 1px solid var(--a-line); border-radius: 12px; }
+.adm-photos { list-style: none; margin: 0 0 12px; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+.adm-photos img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 12px; background: var(--a-bg); border: 1px solid var(--a-line); }
+.adm-confirm { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+.adm-help { margin: 8px 0 0; color: var(--a-mut); font-size: 13px; }
+@media (min-width: 640px) { .adm-confirm { flex-direction: row; flex-wrap: wrap; } }
+.adm-edit section { margin: 0; }
+
+/* Ukurasa wa wafanyakazi (oda za mhudumu/msafirishaji): inatumia adm-* kwa msingi. */
+.stf-live { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.stf-card.stf-urgent { border-color: var(--a-red); border-width: 2px; }
+.stf-lines { margin: 10px 0 0; padding-left: 20px; font-size: 15px; }
+.stf-done { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+.adm-nav { display: flex; gap: 4px; padding: 0 12px; background: var(--a-ink); border-top: 1px solid #2a2622; overflow-x: auto; }
+.adm-tab { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; color: #cfc9bd; text-decoration: none; font-size: 15px; font-weight: 600; border-bottom: 3px solid transparent; white-space: nowrap; }
+.adm-tab[aria-current="page"] { color: #fff; border-bottom-color: #fff; }
+.adm-tab:focus-visible { outline: 3px solid #fff; outline-offset: -3px; }
+.stf-sec { margin: 20px 0 10px; font-size: 18px; padding: 0; border: 0; }
+.tel-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; font-weight: 600; color: var(--a-ink); background: #fff; border: 1px solid var(--a-line); border-radius: 12px; text-decoration: none; white-space: nowrap; }
+.tel-link::before { content: "\260E"; margin-right: 6px; }
+.tel-link:focus-visible { outline: 3px solid var(--a-ink); outline-offset: 2px; }
+.stf-form { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; margin-bottom: 16px; }
+.stf-form .adm-price { align-self: stretch; }
+.stf-role { margin: 8px 0 0; padding: 0; border: 0; }
+.stf-role legend { padding: 0; margin-bottom: 6px; font-size: 14px; color: var(--a-mut); }
+.stf-field-err { margin: 0 0 8px; font-size: 14px; }
+
+/* ---------------------------------------------------------------------
+   Admin: ganda la safu tatu (sidebar nyeusi, ukurasa, "Zinazoingia sasa"). Muonekano wa demo (admin.html).
+   --------------------------------------------------------------------- */
+.adm-shell { display: grid; grid-template-columns: 230px minmax(0, 1fr) 350px; }
+.adm-sb {
+  position: sticky; top: 0; height: 100dvh; display: flex; flex-direction: column; gap: 4px; padding: 22px 16px;
+  background: #121110; color: #e9e4da; overflow-y: auto;
+}
+.adm-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; }
+.adm-brand img, .adm-mark { flex: none; width: 44px; height: 44px; border-radius: 50%; background: #fff; object-fit: cover; }
+.adm-mark { display: grid; place-items: center; color: #121110; font-family: "Gloock", serif; font-size: 22px; }
+.adm-brand b { display: block; font-size: 15px; letter-spacing: 0.12em; text-transform: uppercase; }
+.adm-brand span { display: block; font-size: 12px; color: #a39c90; }
+.adm-sbnav { display: flex; flex-direction: column; gap: 4px; }
+.adm-nv {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 44px; padding: 10px 12px;
+  border-radius: 10px; color: #bdb6aa; font-weight: 600; text-decoration: none;
+}
+.adm-nv:hover { background: rgba(255, 255, 255, 0.06); }
+.adm-nv[aria-current="page"] { background: #f4efe6; color: #121110; }
+.adm-nv:focus-visible, .adm-lnk:focus-visible, .adm-signout:focus-visible { outline: 3px solid #fff; outline-offset: -3px; }
+.adm-badge { min-width: 22px; padding: 1px 8px; border-radius: 999px; background: var(--a-red); color: #fff; font-style: normal; font-size: 11px; text-align: center; }
+.adm-sp { flex: 1; }
+.adm-lnk, .adm-signout {
+  display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 12px; font: inherit; font-weight: 600;
+  color: #e9e4da; text-decoration: none; background: none; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 10px; cursor: pointer;
+}
+.adm-signout { margin-top: 8px; color: #bdb6aa; }
+
+.adm-content { min-width: 0; max-width: none; margin: 0; padding: 28px 32px 56px; }
+.adm-sgrid section, .adm-shell .adm-content > section { margin-top: 0; }
+.adm-shell .adm-head h1 { font-size: 36px; line-height: 1; }
+.adm-shell .adm-head { margin-bottom: 18px; }
+.adm-shell .adm-head p { margin: 6px 0 0; }
+.adm-sh { margin: 0 0 10px; padding: 0; border: 0; font-size: 20px; }
+.adm-sub { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-top: 6px; }
+.adm-sub span { color: var(--a-mut); font-size: 14px; }
+.adm-live { display: inline-flex; align-items: center; gap: 8px; margin: 0 0 16px; font-size: 12px; font-weight: 600; color: var(--a-mut); }
+.adm-live i { width: 8px; height: 8px; border-radius: 50%; background: var(--a-green); box-shadow: 0 0 0 4px rgba(31, 122, 69, 0.15); }
+.adm-toolbar { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px 16px; flex-wrap: wrap; margin-bottom: 14px; }
+.adm-toolbar .adm-chips, .adm-toolbar .stf-live { margin-bottom: 0; }
+.adm-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; }
+
+/* Hesabu za Muhtasari */
+.adm-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 22px; }
+.adm-st { background: #fff; border: 1px solid var(--a-line); border-radius: 14px; padding: 16px; }
+.adm-st b { display: block; font-family: "Gloock", serif; font-weight: 400; font-size: 34px; line-height: 1.1; }
+.adm-st span { color: var(--a-mut); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+/* Zinazoingia (kadi za mkondo) */
+.adm-feed { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+.adm-fc { background: #fff; border: 1px solid var(--a-line); border-radius: 14px; }
+.adm-fc-new { border-color: var(--a-red); box-shadow: 0 0 0 3px rgba(184, 38, 31, 0.08); }
+.adm-fc-link { display: flex; flex-direction: column; gap: 6px; padding: 16px; color: inherit; text-decoration: none; border-radius: 14px; }
+.adm-fc-link:focus-visible { outline: 3px solid var(--a-ink); outline-offset: 2px; }
+.adm-fc-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.adm-fk { font-size: 11px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.adm-fk-dine_in { color: var(--a-red); }
+.adm-fk-booking { color: #1f5fa8; }
+.adm-fk-delivery { color: #8a5a00; }
+.adm-bd { padding: 3px 9px; border-radius: 999px; background: var(--a-bg); color: var(--a-mut); font-size: 11px; font-weight: 700; white-space: nowrap; }
+.adm-bd-new { background: #fde8e6; color: var(--a-red); }
+.adm-bd-done { background: #e9f5e8; color: #2f7d32; }
+.adm-fc-title { font-size: 16px; font-weight: 700; }
+.adm-fc-meta { color: var(--a-mut); font-size: 13px; }
+.adm-fc-lines { display: flex; flex-direction: column; gap: 2px; font-size: 13px; }
+.adm-fc-tot { display: flex; justify-content: space-between; gap: 8px; padding-top: 8px; border-top: 1px dashed var(--a-line); font-weight: 800; }
+
+/* Paneli ya kulia */
+.adm-rp {
+  position: sticky; top: 0; height: 100dvh; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding: 24px 18px;
+  background: #fff; border-left: 1px solid var(--a-line);
+}
+.adm-rp h2 { margin: 0; padding: 0; border: 0; font-size: 24px; }
+.adm-rtabs { display: flex; gap: 6px; }
+.adm-rtab {
+  flex: 1; min-height: 44px; padding: 8px 4px; font: inherit; font-size: 12px; font-weight: 600; color: var(--a-ink);
+  background: var(--a-bg); border: 0; border-radius: 9px; cursor: pointer;
+}
+.adm-rtab[aria-pressed="true"] { color: #fff; background: var(--a-ink); }
+.adm-rtab:focus-visible { outline: 3px solid var(--a-ink); outline-offset: 2px; }
+.adm-rp .adm-feed { grid-template-columns: 1fr; gap: 10px; }
+.adm-rp .adm-fc-link { gap: 4px; padding: 12px; }
+.adm-rp .adm-fc-title { font-size: 14px; }
+.adm-rp .adm-fc-lines { font-size: 12px; }
+.adm-rp-note { margin: 0; }
+.adm-rp-foot { margin: 0; font-size: 11px; color: var(--a-mut); }
+
+/* Jedwali la menu */
+.adm-tbl { background: #fff; border: 1px solid var(--a-line); border-radius: 14px; overflow: hidden; }
+.adm-tl { list-style: none; margin: 0; padding: 0; }
+.adm-mr {
+  display: grid; grid-template-columns: minmax(200px, 1.6fr) 1fr 1fr 150px 110px; gap: 12px; align-items: center;
+  padding: 10px 16px; border-top: 1px solid #f1ece4;
+}
+.adm-mh { border-top: 0; padding-top: 13px; padding-bottom: 13px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--a-mut); }
+.adm-it { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.adm-it b { display: block; overflow-wrap: anywhere; }
+.adm-it small { color: var(--a-mut); font-size: 12px; }
+.adm-mr .adm-thumb { width: 48px; height: 48px; border-radius: 10px; font-size: 20px; }
+.adm-num { font-weight: 700; font-variant-numeric: tabular-nums; }
+.adm-tg {
+  display: inline-flex; align-items: center; gap: 6px; width: max-content; min-height: 44px; padding: 0 12px; font: inherit;
+  font-size: 12px; font-weight: 600; border: 0; border-radius: 999px; cursor: pointer;
+}
+.adm-tg i { width: 7px; height: 7px; border-radius: 50%; }
+.adm-tg-on { background: #e9f5e8; color: #2f7d32; }
+.adm-tg-on i { background: #2f7d32; }
+.adm-tg-off { background: #f7e6e4; color: var(--a-red); }
+.adm-tg-off i { background: var(--a-red); }
+.adm-tg:disabled { opacity: 0.55; cursor: progress; }
+.adm-tg:focus-visible, .adm-edb:focus-visible { outline: 3px solid var(--a-ink); outline-offset: 2px; }
+.adm-edb { min-height: 44px; font: inherit; font-weight: 700; text-align: right; color: var(--a-red); background: none; border: 0; cursor: pointer; }
+/* Mhariri ukiwa wazi, kitufe kinaonyesha alama ya kufunga (×); jina lake liko kwenye aria-label. Inline-block ili mstari chini wa .adm-dk usiingie kwenye alama. */
+.adm-edb-x { display: inline-block; min-width: 44px; font-size: 30px; font-weight: 300; line-height: 1; text-align: right; }
+.adm-tbl .adm-edit { margin: 0; padding: 16px; background: #faf8f4; border-top: 1px solid var(--a-line); }
+.adm-chg { border-color: #d9a400 !important; background: #fffbea !important; }
+.adm-photo-missing {
+  display: grid; place-items: center; width: 100%; aspect-ratio: 1 / 1; padding: 8px; text-align: center; font-size: 13px;
+  color: var(--a-mut); background: var(--a-bg); border: 1px dashed var(--a-line); border-radius: 12px;
+}
+.adm-thumb { color: var(--a-ink); }
+.adm-addform { margin-bottom: 16px; }
+.adm-f3 { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 12px; }
+.adm-f4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; align-items: start; }
+.adm-fcell { min-width: 0; }
+.adm-addform select { min-height: 48px; padding: 8px 14px; font: inherit; font-size: 17px; color: var(--a-ink); background: #fff; border: 1px solid var(--a-line); border-radius: 12px; }
+.adm-addform .adm-price input:focus-visible, .adm-addform select:focus-visible { outline: 3px solid var(--a-ink); outline-offset: 2px; }
+
+/* Wafanyakazi */
+.adm-secur { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; padding: 14px 16px; color: #e9e4da; background: #141210; border-radius: 14px; }
+.adm-secur svg { flex: none; margin-top: 2px; color: #7fd28a; }
+.adm-secur b { display: block; margin-bottom: 2px; color: #fff; }
+.adm-secur span { font-size: 13px; line-height: 1.45; color: #cfc7ba; }
+.adm-reveal { margin-bottom: 16px; padding: 14px 16px; background: #fffbea; border: 1.5px solid #d9a400; border-radius: 14px; }
+.adm-reveal p { margin: 0 0 6px; }
+.adm-reveal-pin { font-size: 24px; letter-spacing: 0.3em; font-variant-numeric: tabular-nums; }
+.adm-sgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 8px; }
+.adm-sl { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.adm-sc { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: start; padding: 14px; background: #fff; border: 1px solid var(--a-line); border-radius: 14px; }
+.adm-sc-off { opacity: 0.8; }
+.adm-sav { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: #141210; color: #fff; font-weight: 800; font-size: 16px; }
+.adm-sb2 { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; min-width: 0; }
+.adm-sb2 > b { font-size: 15px; overflow-wrap: anywhere; }
+.adm-sst { display: flex; flex-wrap: wrap; gap: 10px; font-size: 12px; color: var(--a-mut); }
+.adm-sst b { color: var(--a-ink); }
+.adm-sa { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px; }
+.adm-sc-pin { grid-column: 1 / -1; margin: 0; }
+
+/* Ujumbe wa muda mfupi */
+.adm-toast-wrap { position: fixed; right: 24px; bottom: 24px; z-index: 60; display: flex; flex-direction: column; align-items: flex-end; pointer-events: none; }
+.adm-toast {
+  pointer-events: auto; display: flex; align-items: center; gap: 8px; max-width: min(420px, calc(100vw - 32px)); margin: 0;
+  padding: 4px 4px 4px 16px; color: #fff; font-weight: 600; background: #121110; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+.adm-toast-err { background: var(--a-red); }
+.adm-toast-x { flex: none; width: 44px; height: 44px; font-size: 22px; color: inherit; background: none; border: 0; border-radius: 10px; cursor: pointer; }
+.adm-toast-x:focus-visible { outline: 3px solid #fff; outline-offset: -3px; }
+
+@media (max-width: 1240px) {
+  .adm-shell { grid-template-columns: 200px minmax(0, 1fr) 290px; }
+  .adm-sb { padding: 18px 10px; }
+  .adm-content { padding: 22px 20px 48px; }
+  .adm-mr { grid-template-columns: minmax(0, 1fr) 112px 140px 96px; gap: 8px; padding: 10px 12px; }
+  .adm-mc { display: none; }
+  .adm-stats { grid-template-columns: repeat(2, 1fr); }
+  .adm-shell .adm-head h1 { font-size: 30px; }
+  .adm-sgrid { grid-template-columns: 1fr; }
+  .adm-f4 { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 1080px) and (min-width: 901px) {
+  .adm-shell { grid-template-columns: 190px minmax(0, 1fr); }
+  .adm-rp { display: none; }
+}
+@media (max-width: 900px) {
+  .adm-shell { display: block; }
+  .adm-sb { z-index: 10; height: auto; flex-direction: row; align-items: center; gap: 6px; padding: 10px 12px; overflow: auto hidden; scrollbar-width: none; }
+  .adm-sb::-webkit-scrollbar { display: none; }
+  .adm-brand { flex: none; margin: 0 6px 0 0; }
+  .adm-brand div { display: none; }
+  .adm-brand img, .adm-mark { width: 36px; height: 36px; }
+  .adm-sbnav { flex: none; flex-direction: row; }
+  .adm-nv { flex: none; gap: 6px; padding: 8px 12px; font-size: 13px; white-space: nowrap; }
+  .adm-sp { display: none; }
+  .adm-lnk, .adm-signout { flex: none; min-height: 44px; margin: 0; padding: 8px 12px; font-size: 12.5px; white-space: nowrap; }
+  .adm-rp { display: none; }
+  .adm-content { padding: 18px 16px 48px; }
+  .adm-feed, .adm-grid { grid-template-columns: 1fr; }
+  .adm-mh { display: none; }
+  .adm-mr { grid-template-columns: 1fr auto; grid-template-areas: "it it" "pr ed" "tg tg"; row-gap: 8px; padding: 12px; }
+  .adm-mr .adm-it { grid-area: it; }
+  .adm-mr .adm-num { grid-area: pr; }
+  .adm-mr .adm-tg { grid-area: tg; }
+  .adm-mr .adm-edb { grid-area: ed; }
+  .adm-f3, .adm-f4 { grid-template-columns: 1fr; }
+  .adm-toast-wrap { left: 16px; right: 16px; bottom: 16px; align-items: stretch; }
+  .adm-toast { max-width: none; }
+}
+@media (max-width: 420px) {
+  .adm-stats { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .adm-st { padding: 12px; }
+  .adm-st b { font-size: 28px; }
+  .adm-shell .adm-head h1 { font-size: 28px; }
+}
+
+/* ---- picha za menu kwa admin: sehemu ya picha ndiyo kitufe cha kupakia ---- */
+.adm-thumb-pick { position: relative; padding: 0; border: 0; cursor: pointer; color: var(--a-ink); }
+.adm-thumb-pick:disabled { cursor: progress; opacity: 0.6; }
+.adm-thumb-empty { border: 1.5px dashed #b9b2a5; background: #fff; }
+.adm-thumb-plus { position: absolute; right: 2px; bottom: 2px; display: grid; place-items: center; width: 18px; height: 18px; font: 700 14px/1 system-ui, sans-serif; font-style: normal; color: #fff; background: var(--a-red); border-radius: 50%; }
+.adm-thumb-pick:hover:not(:disabled):not(.adm-thumb-empty) { outline: 2px solid var(--a-red); outline-offset: 1px; }
+.adm-thumb-pick:focus-visible, .adm-slot button:focus-visible { outline: 2px solid var(--a-red); outline-offset: 2px; }
+.adm-cnt { font-family: inherit; font-size: 13px; font-weight: 600; color: var(--a-mut); }
+.adm-slots { list-style: none; margin: 0 0 8px; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 10px; }
+.adm-slot { position: relative; display: block; width: 100%; aspect-ratio: 1 / 1; }
+.adm-slot-main { display: block; width: 100%; height: 100%; padding: 0; overflow: hidden; background: var(--a-bg); border: 1px solid var(--a-line); border-radius: 12px; cursor: pointer; }
+.adm-slot-main img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.adm-slot-main:disabled, .adm-slot-add:disabled { cursor: progress; opacity: 0.7; }
+.adm-slot-miss { display: grid; place-items: center; height: 100%; font-size: 12px; color: var(--a-mut); }
+.adm-slot-badge { position: absolute; left: 6px; top: 6px; padding: 2px 8px; font-size: 11px; font-weight: 700; color: #fff; background: rgba(20, 18, 16, 0.72); border-radius: 999px; pointer-events: none; }
+.adm-slot-x { position: absolute; right: 4px; top: 4px; width: 28px; height: 28px; padding: 0; font-size: 18px; line-height: 1; color: #fff; background: rgba(20, 18, 16, 0.72); border: 0; border-radius: 50%; cursor: pointer; }
+.adm-slot-x::after { content: ""; position: absolute; inset: -8px; }
+.adm-slot-ask { position: absolute; inset: 0; display: grid; grid-template-rows: 1fr 1fr; gap: 6px; padding: 8px; background: rgba(20, 18, 16, 0.84); border-radius: 12px; }
+.adm-slot-ask button { min-height: 36px; font: inherit; font-size: 13px; font-weight: 700; border: 0; border-radius: 8px; cursor: pointer; }
+.adm-slot-yes { color: #fff; background: var(--a-red); }
+.adm-slot-no { color: var(--a-ink); background: #fff; }
+.adm-slot-add { display: grid; place-content: center; gap: 2px; padding: 0; font: inherit; text-align: center; color: var(--a-mut); background: #fff; border: 1.5px dashed #b9b2a5; border-radius: 12px; cursor: pointer; }
+.adm-slot-add b { font-size: 30px; font-weight: 500; line-height: 1; color: var(--a-red); }
+.adm-slot-add span { font-size: 12px; font-weight: 600; }
+.adm-slot-add:hover:not(:disabled), .adm-slot-over { background: #fff7f6; border-color: var(--a-red); }
+
+/* ---- chaguo la chakula: picha upande wa kushoto, jina na bei kulia ---- */
+.adm-packs { list-style: none; margin: 0 0 10px; padding: 0; display: grid; gap: 10px; }
+.adm-pack { display: flex; align-items: center; gap: 12px; }
+.adm-pack-ph { flex: none; width: 76px; }
+.adm-pack .adm-price { flex: 1; min-width: 0; }
+.adm-pack-ph .adm-slot-add b { font-size: 24px; }
+.adm-pack-ph .adm-slot-add span { font-size: 11px; }
+.adm-pack-ph .adm-slot-x { width: 24px; height: 24px; font-size: 16px; }
+.adm-pack-ph .adm-slot-ask { gap: 4px; padding: 5px; }
+.adm-pack-ph .adm-slot-ask button { min-height: 0; font-size: 11px; }
+/* Admin ya menu: fomu ya chakula (sehemu mpya, mitindo, chaguo nyingi) na paneli ya kubadilisha */
+.adm-f2 { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; }
+.adm-addform select, .adm-edit select { width: 100%; min-height: 48px; padding: 8px 14px; font: inherit; font-size: 17px; color: var(--a-ink); background: #fff; border: 1px solid var(--a-line); border-radius: 12px; }
+.adm-edit select:focus-visible { outline: 3px solid var(--a-ink); outline-offset: 2px; }
+.adm-addform .adm-price input, .adm-edit .adm-price input { width: 100%; }
+.adm-newcat { margin-bottom: 4px; }
+.adm-draftpacks { margin: 6px 0 14px; padding: 0; border: 0; min-width: 0; }
+.adm-draftpacks legend { padding: 0; font-weight: 600; margin-bottom: 8px; }
+.adm-dp-list { list-style: none; margin: 0 0 10px; padding: 0; display: grid; gap: 12px; }
+.adm-dp { display: flex; flex-direction: column; gap: 6px; padding: 12px; background: #faf8f4; border: 1px solid var(--a-line); border-radius: 12px; }
+.adm-dp-grid { display: grid; grid-template-columns: 2fr 2fr 1fr; gap: 12px; }
+.adm-dp-x { align-self: flex-start; }
+.adm-pack { align-items: flex-start; }
+.adm-pack-f { flex: 1; min-width: 0; display: grid; gap: 2px; }
+.adm-pack-f .adm-price { margin-bottom: 6px; }
+.adm-pack-x { align-self: flex-start; }
+.adm-newpack { margin-top: 12px; padding: 12px; background: #fff; border: 1px solid var(--a-line); border-radius: 12px; }
+.adm-dz { padding-top: 14px; border-top: 1px solid var(--a-line); }
+.adm-dz-btn { color: var(--a-red); }
+@media (max-width: 720px) { .adm-f2, .adm-dp-grid { grid-template-columns: 1fr; } }
+/* ---- Kitufe cha lugha SW | EN (matumizi ya kawaida; Zebra ina muonekano wake) ---- */
+.lang-toggle { display: inline-flex; align-items: center; gap: 2px; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; }
+.lang-toggle button { min-width: 44px; min-height: 44px; padding: 0 6px; font: inherit; color: inherit; background: none; border: 0; opacity: 0.6; cursor: pointer; }
+.lang-toggle button[aria-pressed="true"] { opacity: 1; text-decoration: underline; text-underline-offset: 6px; }
+.lang-toggle span { opacity: 0.4; }
+
+/* Chaguo la lugha kwenye kurasa za kuingia */
+.gate-hero, .dgate-hero { position: relative; }
+.gate-lang { position: absolute; top: 6px; right: 6px; color: inherit; }
+

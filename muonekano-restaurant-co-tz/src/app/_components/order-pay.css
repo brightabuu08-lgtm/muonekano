@@ -1,0 +1,5 @@
+/* © Bright Abuu. Haki zote zimehifadhiwa. */
+/* Hali ya malipo ya cash kwenye kadi ya oda ya admin. Rangi zinatoka kwenye tokens za brand ya admin (.adm-dk); hali pia inaandikwa kwa maneno. */
+.adm-dk .opay { display: inline-block; margin: calc(var(--space) * 2) 0 0; padding: calc(var(--space) * 1) calc(var(--space) * 3); border: 1.5px solid var(--border-strong); border-radius: var(--radius-pill); font-size: var(--text-xs); font-weight: 700; }
+.adm-dk .opay-done { color: var(--done); border-color: var(--done); }
+.adm-dk .opay-due { color: var(--fg); }

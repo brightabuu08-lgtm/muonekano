@@ -1,0 +1,25 @@
+/* © Bright Abuu. Haki zote zimehifadhiwa. */
+/* Kuchagua muonekano wa menyu (AdminThemes), kwa giza la admin (.adm-dk). Rangi na vipimo ni tokens za brand.css;
+   isipokuwa kijipicha cha muonekano, ambacho kinatumia rangi za muonekano wenyewe kupitia style (kinachoonyesha muonekano huo). */
+.adm-dk .th-card { display: flex; flex-direction: column; gap: calc(var(--space) * 4); margin-top: calc(var(--space) * 4); padding: calc(var(--space) * 5); }
+.adm-dk .th-top { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: calc(var(--space) * 3); }
+.adm-dk .th-top h2 { margin: 0 0 calc(var(--space) * 1); font-size: var(--text-xl); }
+.adm-dk .th-top .adm-help { margin: 0; max-width: 52ch; }
+.adm-dk .th-tabs { display: flex; gap: calc(var(--space) * 2); }
+.adm-dk .th-note { margin: 0; padding: calc(var(--space) * 3) calc(var(--space) * 4); color: var(--muted); background: var(--raised); border: 1px dashed var(--border-strong); border-radius: var(--radius-sm); font-size: var(--text-sm); }
+.adm-dk .th-list { display: grid; gap: calc(var(--space) * 3); margin: 0; padding: 0; list-style: none; }
+.adm-dk .th-item { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: calc(var(--space) * 4); padding: calc(var(--space) * 3); background: var(--raised); border: 1px solid var(--border); border-radius: var(--radius-md); }
+.adm-dk .th-cur { border-color: var(--border-strong); }
+.adm-dk .th-shot { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1.4fr 1fr; gap: 4px; width: 76px; height: 96px; padding: 6px; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); }
+.adm-dk .th-shot i { display: block; border-radius: 3px; }
+.adm-dk .th-shot i:nth-child(1) { grid-column: 1 / -1; }
+.adm-dk .th-body h3 { display: flex; flex-wrap: wrap; align-items: center; gap: calc(var(--space) * 2); margin: 0 0 calc(var(--space) * 1); font-size: var(--text-base); }
+.adm-dk .th-body p { margin: 0; color: var(--muted); font-size: var(--text-sm); }
+.adm-dk .th-act { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: calc(var(--space) * 2); }
+.adm-dk .th-act .adm-btn { display: inline-flex; align-items: center; justify-content: center; min-height: var(--tap); text-decoration: none; }
+
+@media (max-width: 640px) {
+  .adm-dk .th-item { grid-template-columns: auto minmax(0, 1fr); }
+  .adm-dk .th-act { grid-column: 1 / -1; justify-content: stretch; }
+  .adm-dk .th-act .adm-btn { flex: 1; }
+}

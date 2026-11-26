@@ -1,0 +1,49 @@
+/* © Bright Abuu. Haki zote zimehifadhiwa.
+   Dashboard ya mmiliki (/hq). Ganda na vipande ni vya admin (.adm-dk, admin-brand.css); hapa ni mpangilio tu.
+   Thamani zote kutoka tokens za brand (src/styles/brand.css). */
+.jk { min-height: 100vh; }
+.jk-top { display: flex; align-items: center; gap: calc(var(--space) * 3); padding: calc(var(--space) * 3) calc(var(--space) * 6); border-bottom: 1px solid var(--border); }
+.jk-main { max-width: 1120px; margin: 0 auto; padding: calc(var(--space) * 8) calc(var(--space) * 6); }
+.jk .adm-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: calc(var(--space) * 3); margin: calc(var(--space) * 6) 0; }
+.jk .adm-st { display: flex; flex-direction: column; gap: calc(var(--space) * 1); padding: calc(var(--space) * 4); }
+.jk .adm-st small { color: var(--muted); font-size: var(--text-xs); }
+.jk-sec { margin-top: calc(var(--space) * 8); }
+.jk-events { display: flex; flex-direction: column; gap: calc(var(--space) * 2); margin: calc(var(--space) * 3) 0 0; padding: 0; list-style: none; }
+.jk-ev { display: flex; flex-wrap: wrap; align-items: center; gap: calc(var(--space) * 1) calc(var(--space) * 3); padding: calc(var(--space) * 3) calc(var(--space) * 4); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); }
+.jk-ev.jk-new { border-color: var(--accent); }
+.jk-ev span { color: var(--muted); overflow-wrap: anywhere; }
+.jk-ev small { margin-left: auto; color: var(--muted); }
+.jk-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: calc(var(--space) * 4); margin-top: calc(var(--space) * 3); }
+.jk-card { display: flex; flex-direction: column; gap: calc(var(--space) * 3); padding: calc(var(--space) * 4); }
+.jk-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: calc(var(--space) * 3); }
+.jk-card-head h3 { margin: 0; font-size: var(--text-lg); overflow-wrap: anywhere; }
+.jk-facts { display: grid; grid-template-columns: 1fr 1fr; gap: calc(var(--space) * 2) calc(var(--space) * 4); margin: 0; }
+.jk-facts dt { color: var(--muted); font-size: var(--text-xs); }
+.jk-facts dd { margin: 0; font-size: var(--text-sm); overflow-wrap: anywhere; }
+.jk-actions, .jk-confirm { display: flex; flex-wrap: wrap; align-items: flex-end; gap: calc(var(--space) * 2); }
+.jk-actions label { display: flex; flex-direction: column; gap: calc(var(--space) * 1); }
+.jk-confirm label { flex-basis: 100%; }
+.jk :is(.jk-actions select, .jk-confirm input) { min-height: var(--tap); padding: 0 calc(var(--space) * 3); color: var(--fg); background: var(--bg); border: 1px solid var(--border-strong); border-radius: var(--radius-sm); font: inherit; }
+.jk-confirm input { flex: 1 1 160px; font-family: var(--font-mono); }
+
+@media (max-width: 600px) {
+  .jk-top, .jk-main { padding-left: calc(var(--space) * 4); padding-right: calc(var(--space) * 4); }
+  .jk-list { grid-template-columns: 1fr; }
+}
+
+/* Kurasa za kisheria (PlatformLegal) */
+.jk-legal { display: grid; gap: calc(var(--space) * 4); padding: calc(var(--space) * 4); margin-top: calc(var(--space) * 3); }
+.jk-tabs { display: flex; flex-wrap: wrap; align-items: center; gap: calc(var(--space) * 2); }
+.jk-field { display: grid; gap: calc(var(--space) * 2); }
+.jk-field-head { display: flex; align-items: center; justify-content: space-between; gap: calc(var(--space) * 2); }
+.jk :is(.jk-field input, .jk-field textarea) {
+  width: 100%; padding: calc(var(--space) * 3); color: var(--fg); background: var(--bg);
+  border: 1px solid var(--border-strong); border-radius: var(--radius-sm); font: inherit;
+}
+.jk .jk-field input { min-height: var(--tap); }
+.jk .jk-field textarea { min-height: 360px; resize: vertical; font-family: var(--font-mono); font-size: var(--text-sm); line-height: 1.6; }
+.jk-preview { max-height: 520px; overflow: auto; padding: calc(var(--space) * 4); background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); line-height: 1.6; }
+.jk-preview h3 { margin: calc(var(--space) * 4) 0 calc(var(--space) * 2); font-size: var(--text-lg); }
+.jk-preview p { margin: 0 0 calc(var(--space) * 3); }
+.jk-preview ul { margin: 0 0 calc(var(--space) * 3); padding-left: calc(var(--space) * 5); }
+.jk :is(.jk-field input, .jk-field textarea):focus-visible { outline: 3px solid var(--fg); outline-offset: 2px; }

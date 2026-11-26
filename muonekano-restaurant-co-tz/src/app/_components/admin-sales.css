@@ -1,0 +1,19 @@
+/* © Bright Abuu. Haki zote zimehifadhiwa. */
+/* Ukurasa wa Mauzo wa admin. Rangi na vipimo vyote vinatoka kwenye tokens za brand ya admin (.adm-dk). */
+.adm-dk .sls-stats { margin-bottom: calc(var(--space) * 4); }
+.adm-dk .sls-stats .adm-st b { display: block; font-size: var(--text-xl); overflow-wrap: anywhere; }
+.adm-dk .sls-stats .adm-st small { display: block; margin-top: calc(var(--space) * 1); color: var(--muted); font-size: var(--text-xs); }
+.adm-dk .sls-sec { margin-top: calc(var(--space) * 6); }
+
+.adm-dk .sls-rows { display: grid; gap: calc(var(--space) * 3); margin: 0; padding: calc(var(--space) * 4); list-style: none; }
+.adm-dk .sls-rows li { display: grid; grid-template-columns: minmax(64px, 28%) minmax(0, 1fr) auto; align-items: center; gap: calc(var(--space) * 3); }
+.adm-dk .sls-l { overflow: hidden; color: var(--fg); font-size: var(--text-sm); font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.adm-dk .sls-bar { height: 10px; overflow: hidden; background: var(--raised); border-radius: var(--radius-pill); }
+.adm-dk .sls-bar i { display: block; height: 100%; background: var(--signal); border-radius: var(--radius-pill); }
+.adm-dk .sls-v { color: var(--fg); font-family: var(--font-mono); font-size: var(--text-sm); text-align: right; font-variant-numeric: tabular-nums; }
+.adm-dk .sls-v small { display: block; color: var(--muted); font-family: inherit; font-size: var(--text-xs); }
+
+@media (max-width: 560px) {
+  .adm-dk .sls-rows li { grid-template-columns: minmax(0, 1fr) auto; }
+  .adm-dk .sls-bar { grid-column: 1 / -1; grid-row: 2; }
+}

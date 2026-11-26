@@ -1,0 +1,27 @@
+/* © Bright Abuu. Haki zote zimehifadhiwa. */
+/* Hali ya oda kwa mteja (artboard 04). Inaonekana chini ya .dm (Standard, .lt); Zebra ina mtindo wake (order-timeline-zebra.css);
+   theme nyingine: imefichwa. Rangi na fonti hapa ni tokens za src/styles/brand.css. Nyanya (--accent) ni hatua ya sasa tu. */
+.ord-tl-wrap { display: none; }
+.ord-orn { display: none; }
+.dm .ord-tl-wrap { display: block; margin: 4px 0 12px; }
+.dm .ord-hero {
+  margin: 8px 0 6px; font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 9vw, 44px);
+  line-height: 0.98; letter-spacing: -0.04em; color: var(--fg);
+}
+.dm .ord-hero.is-cancel { color: var(--danger); }
+.dm .ord-hero-sub { margin: 0; font-size: var(--text-sm); color: var(--muted); }
+
+.dm .ord-tl { list-style: none; margin: 16px 0 4px; padding: 0; }
+.dm .ord-tl li { position: relative; display: flex; align-items: center; gap: 14px; min-height: 44px; font-size: 17px; color: var(--muted); }
+/* Mstari kati ya duara mbili: kutoka chini ya duara hii hadi juu ya inayofuata. */
+.dm .ord-tl li:not(:last-child)::after { content: ""; position: absolute; left: 10px; top: calc(50% + 11px); bottom: calc(-50% + 11px); width: 2px; background: var(--border-strong); }
+.dm .ord-tl li.ord-tl-done:not(:last-child)::after { background: var(--fg); }
+.dm .ord-tl-dot {
+  flex: none; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%;
+  border: 2px solid var(--border-strong); background: var(--surface); color: var(--bg);
+}
+.dm .ord-tl-dot svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.dm .ord-tl li.ord-tl-done { color: var(--fg); }
+.dm .ord-tl li.ord-tl-done .ord-tl-dot { background: var(--fg); border-color: var(--fg); }
+.dm .ord-tl li.ord-tl-now { color: var(--fg); font-weight: 700; }
+.dm .ord-tl li.ord-tl-now .ord-tl-dot { background: var(--accent); border-color: var(--accent); }

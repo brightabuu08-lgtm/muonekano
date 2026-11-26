@@ -1,0 +1,300 @@
+// © Bright Abuu. Haki zote zimehifadhiwa.
+// Maandishi YOTE ya tovuti ya masoko (Kiswahili = ufunguo wa tafsiri). Kiingereza kiko kwenye src/lib/i18n-en/site.ts.
+// Kanuni: hakuna Kiswahili ndani ya JSX; kila kitu kinatoka hapa, ili jaribio liangalie kuwa kila maandishi yana Kiingereza.
+
+export const copy = {
+  meta: {
+    description:
+      "Mfumo wa kidijitali kwa migahawa, café na baa Tanzania: menu ya QR yenye picha, oda za mezani na delivery, booking ya meza na paneli ya admin. Dar es Salaam, Arusha, Zanzibar, Mwanza.",
+    titleSuffix: "Menu ya QR, oda na admin kwa migahawa Tanzania",
+  },
+  ui: {
+    skip: "Ruka hadi maudhui",
+    openNav: "Fungua orodha ya sehemu",
+    closeNav: "Funga orodha ya sehemu",
+    navLabel: "Sehemu za ukurasa",
+    footerNavLabel: "Viungo vya chini",
+    illustrative: "Mfano wa kuonyesha",
+    demoCta: "Omba demo",
+  },
+  nav: {
+    how: "Inavyofanya kazi",
+    features: "Vipengele",
+    plans: "Vifurushi",
+    showcase: "Mfano",
+    faq: "Maswali",
+  },
+  hero: {
+    title: "Wateja wanaagiza kwa simu. Wafanyakazi wanaona oda papo hapo.",
+    sub: "Menu ya QR yenye picha, oda za mezani na delivery, na paneli moja ya kusimamia mgahawa wako. Kwa Kiswahili na Kiingereza.",
+    primary: "Omba demo",
+    secondary: "Angalia mfano",
+    note: "Kwa migahawa, café na baa Tanzania",
+    figure: "Mfano wa tiketi tatu za oda: mpya, inaandaliwa na iko njiani",
+  },
+  // Data ya mfano ya tiketi za Hero (si bei halisi za mteja yeyote).
+  tickets: {
+    table: "Meza 7",
+    line: "Wali na kuku wa kuchoma, 1",
+    customer: "Asha",
+    dish: "Wali na kuku wa kuchoma",
+    price1: "TZS 28,000",
+    price2: "TZS 45,000",
+  },
+  problem: {
+    title: "Kwa nini migahawa mingi inapoteza oda na muda",
+    problem: "Tatizo",
+    solution: "Suluhisho",
+    items: [
+      {
+        title: "Oda zinachelewa",
+        problem: "Mteja anamsubiri mhudumu, kisha oda inafika jikoni kwa mdomo au kwa karatasi.",
+        solution: "Mteja anaskani QR, anachagua na kutuma mwenyewe. Oda inafika papo hapo.",
+      },
+      {
+        title: "Makosa ya oda",
+        problem: "Oda inasikika vibaya au inasomwa vibaya, na mteja anapata asichoagiza.",
+        solution: "Mteja anaandika oda yake mwenyewe pamoja na meza na jina, kwa hiyo hakuna kusikia vibaya.",
+      },
+      {
+        title: "Hakuna mwonekano wa moja kwa moja",
+        problem: "Mmiliki na wafanyakazi hawajui oda gani imeingia, nani anaishughulikia na imefikia wapi.",
+        solution: "Wahudumu, wasafirishaji na mmiliki wanaona oda zinavyoingia na kubadilika hali kwa wakati halisi.",
+      },
+    ],
+  },
+  how: {
+    title: "Inavyofanya kazi",
+    steps: [
+      {
+        title: "Mteja anaskani QR",
+        text: "QR moja ya mgahawa iko mezani. Mteja anaskani, anachagua namba ya meza yake, na menu inafunguka bila kupakua app.",
+      },
+      {
+        title: "Anaagiza",
+        text: "Anachagua chakula, ukubwa na chaguo za ziada, kisha anatuma oda ya mezani au delivery.",
+      },
+      {
+        title: "Mhudumu au msafirishaji anaiona papo hapo",
+        text: "Oda mpya inaonekana kwenye ubao wao kwa wakati halisi, tayari kuchukuliwa.",
+      },
+      {
+        title: "Mmiliki anafuatilia kwenye admin",
+        text: "Muhtasari wa leo, oda na booking zinazoingia, vyote kwenye paneli moja.",
+      },
+    ],
+  },
+  features: {
+    title: "Kila kitu unachohitaji kuendesha oda",
+    items: [
+      { icon: "qr", title: "QR moja kwa meza zote", text: "Picha za vyakula, ukubwa (packs), chaguo za ziada na mitindo." },
+      { icon: "order", title: "Oda ya mezani na delivery", text: "Mezani: namba ya meza na jina. Delivery: jina, simu na anwani." },
+      { icon: "calendar", title: "Booking ya meza", text: "Wateja wanaomba meza kwa fomu fupi, na wewe unaipokea kwenye admin." },
+      { icon: "live", title: "Ubao wa oda papo hapo", text: "Wahudumu na wasafirishaji wanaona oda mpya zinapoingia, kwa wakati halisi." },
+      { icon: "dashboard", title: "Paneli ya admin", text: "Muhtasari wa leo, oda na booking zinazoingia mahali pamoja." },
+      { icon: "edit", title: "Simamia menu mwenyewe", text: "Ongeza na hariri vyakula, picha na chaguo wakati wowote." },
+      { icon: "staff", title: "Wafanyakazi na ruhusa", text: "Ongeza wafanyakazi na mpe kila mmoja ruhusa zake." },
+      { icon: "lang", title: "Kiswahili na Kiingereza", text: "Mfumo mzima unabadilika kati ya lugha mbili kwa kubonyeza mara moja." },
+      {
+        icon: "shield",
+        title: "Usalama",
+        text: "Ulinzi dhidi ya bots kwenye oda, data ya kila mgahawa imetengwa, na audit log ya shughuli.",
+      },
+    ],
+  },
+  views: {
+    title: "Admin kwa mmiliki, ubao kwa wahudumu",
+    sub: "Mifano ya skrini za mfumo. Namba na majina ni ya kuonyesha tu.",
+    adminTitle: "Paneli ya admin",
+    adminText: "Muhtasari wa leo, oda na booking mpya, menu na wafanyakazi.",
+    staffTitle: "Ubao wa mhudumu",
+    staffText: "Oda mpya zinaingia zenyewe. Mhudumu anachukua oda na kuihudumia.",
+    admin: {
+      brand: "Mgahawa Wako",
+      overview: "Muhtasari",
+      orders: "Oda",
+      bookings: "Booking",
+      menu: "Menu",
+      staff: "Wafanyakazi",
+      statNew: "Oda mpya",
+      statProgress: "Zinaendelea",
+      statBookings: "Booking mpya",
+      listTitle: "Oda zinazoingia",
+      rowTable: "Meza 7",
+      rowDelivery: "Delivery",
+      rowName: "Juma",
+      rowDine: "Oda ya mezani",
+      statusNew: "Imepokelewa",
+      statusPrep: "Inaandaliwa",
+      statusWay: "Iko njiani",
+    },
+    board: {
+      role: "Mhudumu",
+      hello: "Habari, Asha",
+      tabWaiting: "Zinasubiri",
+      tabMine: "Zangu",
+      tabBookings: "Booking",
+      cardType: "Oda ya mezani",
+      cardTable: "Meza 7",
+      cardTable2: "Meza 3",
+      cardLine1: "Wali na kuku wa kuchoma, 1",
+      cardLine2: "Sahani kubwa ya mchanganyiko, 1",
+      action: "Chukua oda",
+    },
+  },
+  plans: {
+    title: "Chagua kifurushi cha mgahawa wako",
+    sub: "Vifurushi viwili. Unaweza kuanza na Standard na kupanda Premium baadaye.",
+    addressLabel: "Anwani ya ukurasa wako",
+    addressExample: "jina-la-mgahawa",
+    addressOwn: "mgahawawako.co.tz",
+    premiumOnly: "Premium tu",
+    cta: "Omba demo",
+    standard: {
+      tagline: "Muundo wa kitaalamu wa pamoja, kila kitu cha msingi tayari.",
+      items: [
+        "Ukurasa wa mgahawa wako kwenye anwani ya jukwaa letu",
+        "Menu ya QR, oda za mezani na delivery, booking ya meza",
+        "Ubao wa oda wa wahudumu na wasafirishaji, na paneli ya admin",
+        "Muundo wa kitaalamu unaoshirikiwa na migahawa mingine",
+      ],
+      locked: ["Domain yako mwenyewe", "Muundo maalum kwa chapa yako", "Usanidi na msaada wa kipaumbele"],
+    },
+    premium: {
+      tagline: "Mgahawa wako kwa jina na muonekano wako mwenyewe, vimeandaliwa na timu yetu.",
+      items: [
+        "Kila kitu cha Standard",
+        "Domain yako mwenyewe, inayofungua ukurasa wa mgahawa wako",
+        "Muundo maalum kwa chapa yako: rangi, herufi, mpangilio na mwelekeo wa picha",
+        "Usanidi wa kipaumbele na msaada wa kipaumbele",
+      ],
+    },
+    explain: {
+      title: "Premium ina nini zaidi?",
+      domainTitle: "Domain yako mwenyewe",
+      domainText: "Wateja wanaingia kwenye mgahawawako.co.tz badala ya anwani ya jukwaa letu. Sisi tunaunganisha domain kwenye ukurasa wako.",
+      designTitle: "Muundo maalum",
+      designText:
+        "Timu yetu inaandaa muonekano wa mgahawa wako: rangi, herufi, mpangilio na mwelekeo wa picha. Wewe huhitaji ujuzi wa ubunifu wala wa kiufundi.",
+      note: "Domain yako na muundo maalum zinapatikana kwenye Premium tu, na tunazitayarisha sisi.",
+    },
+    more: "Bado unafikiria?",
+    moreFaq: "Soma maswali yanayoulizwa mara nyingi",
+    moreOr: "au",
+    moreContact: "tuandikie",
+  },
+  setup: {
+    title: "Kuanza ni rahisi: hatua 4",
+    steps: [
+      { title: "Tuambie kuhusu mgahawa wako", text: "Jina, mji, menu uliyonayo na kifurushi unachopenda." },
+      {
+        title: "Tunaweka menu na muundo",
+        text: "Tunaweka vyakula, picha na bei. Kwa Premium tunaandaa pia muundo maalum na domain yako.",
+      },
+      { title: "Unakubali", text: "Unaangalia, unatoa maoni, na unakubali kabla ya kufungua." },
+      { title: "Mnaanza na QR yenu", text: "Unapata QR moja ya mgahawa ya kuchapisha, na wateja wanaanza kuagiza." },
+    ],
+  },
+  showcase: {
+    title: "Premium kwa vitendo: Zebra Restaurant",
+    text: "Zebra Restaurant, Dar es Salaam, ina ukurasa wake wenye muundo ulioandaliwa kwa chapa yao: rangi, herufi, mpangilio wa menu na picha za vyakula vyao.",
+    points: ["Rangi, herufi na mpangilio vya chapa yao", "Menu ya QR, oda, booking na delivery", "Kiswahili na Kiingereza"],
+    cta: "Fungua mfano hai",
+    client: {
+      label: "Mgahawa unaotumia mfumo huu sasa",
+      meta: "Dar es Salaam · kifurushi cha Premium",
+    },
+    photosCaption: "Picha za vyakula kutoka kwenye menu ya Zebra Restaurant.",
+    alts: [
+      "Sahani kubwa ya wali na kuku wa kuchoma",
+      "Sahani ya mchanganyiko wa nyama na wali",
+      "Sahani ya mbuzi na wali wa rangi",
+      "Wali wa Kiarabu na vipande vya kuku",
+    ],
+  },
+  faq: {
+    title: "Maswali yanayoulizwa mara nyingi",
+    items: [
+      {
+        q: "Data ya mgahawa wangu iko salama?",
+        a: "Ndiyo. Data ya kila mgahawa imetengwa kwa kiwango cha safu (row-level), oda zinalindwa dhidi ya bots, na shughuli muhimu zinaandikwa kwenye audit log.",
+      },
+      {
+        q: "Kuweka mfumo kunachukua muda gani?",
+        a: "Muda wa kuweka ni {time}. Muda halisi unategemea ukubwa wa menu yako na picha ulizonazo.",
+        aNoTime: "Tunaanza mara tu tunapopokea menu yako. Muda halisi unategemea ukubwa wa menu na picha ulizonazo, na tunakuambia baada ya kuiona.",
+      },
+      {
+        q: "Naweza kubadilisha menu yangu mwenyewe?",
+        a: "Ndiyo. Kwenye admin unaongeza na kuhariri vyakula, picha, bei na chaguo wakati wowote.",
+      },
+      {
+        q: "Intaneti ikikatika itakuwaje?",
+        a: "Mfumo unahitaji intaneti kutuma na kupokea oda. Mtandao ukikatika, skrini zinaonyesha ujumbe wa wazi na kujaribu tena zenyewe. Tunashauri uwe na mpango wa dharura, mfano kuandika oda kwa mkono kwa muda.",
+      },
+      {
+        q: "Naweza kupanda kutoka Standard kwenda Premium baadaye?",
+        a: "Ndiyo. Unaweza kuanza na Standard na kupanda Premium baadaye. Tuandikie, nasi tutakuandalia domain na muundo maalum.",
+      },
+    ],
+  },
+  contact: {
+    title: "Omba demo",
+    sub: "Jaza fomu fupi, kisha utume ombi lako kwa WhatsApp. Tutakujibu na kukupangia demo.",
+    name: "Jina lako",
+    restaurant: "Jina la mgahawa",
+    city: "Mji",
+    phone: "Namba ya simu",
+    phoneHint: "Mfano: 0712 345 678",
+    plan: "Kifurushi unachovutiwa nacho",
+    planStandard: "Standard",
+    planPremium: "Premium",
+    planUnsure: "Sijui bado",
+    message: "Ujumbe (si lazima)",
+    submit: "Tuma kwa WhatsApp",
+    errName: "Weka jina lako.",
+    errRestaurant: "Weka jina la mgahawa.",
+    errCity: "Weka mji ulipo mgahawa.",
+    errPhone: "Weka namba sahihi ya simu, mfano 0712 345 678.",
+    errMessage: "Ujumbe ni mrefu mno. Tumia herufi 500 au chini.",
+    errorsTitle: "Kuna sehemu za kurekebisha",
+    doneTitle: "Ombi lako liko tayari",
+    doneText: "Tunafungua programu ya kutuma ujumbe. Isipofunguka, bonyeza kitufe hapa chini.",
+    openWhatsapp: "Fungua WhatsApp",
+    sendEmail: "Tuma kwa email",
+    notReadyTitle: "Bado hatuwezi kupokea ombi hapa",
+    notReady: "Njia ya mawasiliano bado haijawekwa. Tafadhali jaribu tena baadaye.",
+    edit: "Rekebisha ombi",
+    direct: "Au tuandikie moja kwa moja:",
+    msgIntro: "Habari, naomba demo ya mfumo wa mgahawa.",
+    msgSubject: "Ombi la demo",
+    msgName: "Jina",
+    msgRestaurant: "Mgahawa",
+    msgCity: "Mji",
+    msgPhone: "Simu",
+    msgPlan: "Kifurushi",
+    msgMessage: "Ujumbe",
+  },
+  footer: {
+    tagline: "Mfumo wa kidijitali wa menu, oda na admin kwa migahawa Tanzania.",
+    social: "Mitandao ya kijamii",
+  },
+} as const;
+
+/** Maneno muhimu ya Kiingereza kwa metadata (inatolewa na seva, kwa hiyo haitumii kamusi ya lugha). */
+export const metaEn = {
+  keywords: ["restaurant menu system Tanzania", "QR menu Tanzania", "online ordering restaurant Dar es Salaam", "restaurant delivery orders Tanzania"],
+} as const;
+
+export const keywordsSw = [
+  "menu ya QR",
+  "mfumo wa mgahawa",
+  "oda za mgahawa",
+  "delivery ya chakula",
+  "booking ya meza",
+  "mgahawa Dar es Salaam",
+  "mgahawa Arusha",
+  "mgahawa Zanzibar",
+  "mgahawa Mwanza",
+  "migahawa Tanzania",
+] as const;
